@@ -31,8 +31,10 @@ function createEmployeeRecords(arrayOfArrays){
          
     })
     console.log(employeeRecords)
-    createTimeInEvent(employeeRecords)
+    console.log(employee)
+    
     return employeeRecords
+    
 
 }
 
@@ -40,19 +42,22 @@ createEmployeeRecords(arrayOfArrays)
 // push time in object into time in array
 // employee object needs to get into other function
 
-function createTimeInEvent(employeeRecords){
-    let timeInEvent = {}
-    let newEvent = "2014-02-28 1400"
-    let newEventArray = newEvent.split(" ");
-    let dateIn = newEventArray[0]
-    let timeIn = newEventArray[1]
-    timeInEvent.date = dateIn 
-    timeInEvent.time = timeIn
-    employeeRecords.forEach((employeeRecord) =>{  
-    let employeeTimeIn = employeeRecord.timeInEvents
-    employeeTimeIn.push(timeInEvent)
-    debugger;
-    return employeeRecord
+let employee = ["moe", "sizlak", "barkeep", 2]
+let dateStamp = "2018-01-01 2300"
 
-})
+function createTimeInEvent(employee, dateStamp){
+
+    let timeInEvent = {}
+    let newEventArray = dateStamp.split(" ");
+    let dateIn = newEventArray[0]
+    let timeIn = parseInt(newEventArray[1], 10)
+    timeInEvent.date = dateIn 
+    timeInEvent.time = timeIn 
+    debugger;
+    let employeeTimeIn = employee.timeInEvents
+    employeeTimeIn.push(timeInEvent)
+    
+    return employee
 }
+
+
